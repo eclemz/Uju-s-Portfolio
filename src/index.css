@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @apply font-montserrat;
+}
+
+.custom-pagination .swiper-pagination-bullet {
+  @apply w-2.5 h-2.5 rounded-full bg-gray-400/70 opacity-60 mx-1;
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+  @apply bg-[#100108] dark:bg-[#FCFCFC] opacity-100;
+}
