@@ -6,8 +6,7 @@ const config = {
     "@storybook/addon-docs",
     "@storybook/addon-onboarding",
     "@storybook/addon-a11y",
-    "@storybook/addon-vitest",
-    "@storybook/addon-interactions",
+    "@storybook/addon-vitest"
   ],
   framework: "@storybook/react-vite",
   core: { builder: "@storybook/builder-vite" },
