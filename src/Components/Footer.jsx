@@ -1,6 +1,9 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+import { navLinks } from "../Data/Data";
 import { Buttons } from "./Buttons";
+import { MdArrowOutward } from "react-icons/md";
 
 function Footer() {
   function handleKeyDown(e) {
@@ -9,6 +12,21 @@ function Footer() {
       yourClickHandler();
     }
   }
+
+  const linkHash = (to) => (typeof to === "string" ? to : to.hash || "");
+
+  const isHashActive = (link) => {
+    if (link.type === "hash") {
+      return (
+        location.pathname === link.to.pathname && location.hash === link.to.hash
+      );
+    }
+    if (link.type === "hash-self") {
+      return location.hash === linkHash(link.to);
+    }
+    return false;
+  };
+
   const handleEmailClick = () => {
     window.location.href =
       "mailto:chimechinonyelum@gmail.com?subject=Let's%20Work%20Together";
@@ -87,43 +105,82 @@ function Footer() {
       </nav>
 
       {/* Desktop Footer */}
-      <nav className=" md:hidden hidden lg:flex w-full justify-between items-center self-stretch pt-10 pb-5 px-14">
-        <Link to="/" className="flex items-center gap-2" aria-label="Homepage">
-          <span className="flex justify-center items-center shrink-0 font-inter text-lg font-bold text-[#100108] dark:text-[#FFF]">
+      <nav className="md:hidden hidden lg:flex w-full justify-between items-center pt-10 pb-5 px-14">
+        <HashLink
+          smooth
+          to="/#"
+          className="flex items-center gap-2"
+          aria-label="Homepage"
+        >
+          <span className="font-inter text-lg font-bold text-[#100108] dark:text-[#FFF]">
             Ujunwa Chiahaoke
           </span>
-        </Link>
-        <ul className="flex py-5 items-center gap-5">
-          {navLink.map((link) => (
-            <li
-              key={link.name}
-              className="flex justify-center items-center gap-2 p-2"
-            >
-              <NavLink
-                to={link.path}
-                className={`group text-base text-[#100108] dark:text-[#FFF] items-center cursor-pointer`}
-                aria-label={`Go to ${link.name}`}
-              >
-                <span className="relative pb-1">{link.name}</span>
-              </NavLink>
+        </HashLink>
+
+        <ul className="flex py-5 items-center gap-10">
+          {navLinks.map((link) => (
+            <li key={link.name} className="p-2">
+              {link.type === "route" ? (
+                <NavLink
+                  to={link.to}
+                  className={({ isActive }) =>
+                    `group text-base text-[#100108] dark:text-[#FFF] cursor-pointer ${
+                      isActive ? "font-medium" : ""
+                    }`
+                  }
+                >
+                  {({ isActive }) => (
+                    <span className="relative pb-1">
+                      {link.name}
+                      <span
+                        className={`absolute left-0 bottom-0 h-[2px] transition-all duration-500 ${
+                          isActive
+                            ? "w-full"
+                            : "w-0 group-hover:w-full bg-[#FCFCFC]/40"
+                        }`}
+                      />
+                    </span>
+                  )}
+                </NavLink>
+              ) : (
+                <HashLink
+                  smooth
+                  to={link.to}
+                  className={`group text-base text-[#100108] dark:text-[#FFF] cursor-pointer ${
+                    isHashActive(link) ? "font-medium" : ""
+                  }`}
+                >
+                  <span className="relative pb-1">
+                    {link.name}
+                    <span
+                      className={`absolute left-0 bottom-0 h-[2px] transition-all duration-500 ${
+                        isHashActive(link)
+                          ? "w-full"
+                          : "w-0 group-hover:w-full bg-[#FCFCFC]/40"
+                      }`}
+                    />
+                  </span>
+                </HashLink>
+              )}
             </li>
           ))}
         </ul>
 
         <section className="flex items-center gap-5">
+          {/* <ThemeToggle /> */}
           <a
-            href="http://linkedin.com/in/chinonyelum-chime-a4b0a4166"
+            href="https://www.linkedin.com/in/ujunwa-chiahaoke-8159731ba"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex justify-center items-center gap-2 text-base py-[0.875rem] px-4 cursor-pointer text-[#100108] dark:text-[#C78D32] dark:hover:text-[#BB7608] dark:active:text-[#D8B070]"
-            aria-label="Open Ujunwa Chiahaoke LinkedIn profile in a new tab"
+            className="group flex flex-row gap-[1px] text-base items-center py-[0.875rem] px-4 text-[#C78D32] hover:text-[#BB7608] active:text-[#D8B070] lg:text-base md:text-sm font-[400] leading-6 transition-colors duration-300"
           >
             LinkedIn
+            <MdArrowOutward
+              className="opacity-0 group-hover:opacity-100 h-5 w-5 text-[#BB7608] transition-opacity duration-300"
+              aria-hidden="true"
+            />
           </a>
-          <Buttons
-            className="md:self-center font-bold leading-[1.05rem]"
-            onClick={handleEmailClick}
-          >
+          <Buttons className="font-bold" onClick={handleEmailClick}>
             Let’s talk
           </Buttons>
         </section>

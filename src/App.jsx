@@ -25,7 +25,7 @@ function App() {
             <Route path="/project" element={<Project />} />
           </Routes>
         </AnimatePresence>
-        <section id="testimonial" className="lg:scroll-mt-36 scroll-mt-20">
+        <section id="testimonial" className="lg:scroll-mt-36 scroll-mt-20 mt-7">
           <Testimonial data={TestimonialCard} />
         </section>
         <Footer />

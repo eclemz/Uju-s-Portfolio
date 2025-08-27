@@ -1,11 +1,11 @@
 // Dashboard.jsx
 import React from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import ThemeToggle from "./ThemeToggle";
 import { Buttons } from "./Buttons";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { navLinks } from "../Data/Data";
+import { MdArrowOutward } from "react-icons/md";
 
 function Dashboard({ onHamburgerClick }) {
   const location = useLocation();
@@ -14,20 +14,27 @@ function Dashboard({ onHamburgerClick }) {
   const linkHash = (to) => (typeof to === "string" ? to : to.hash || "");
 
   const isHashActive = (link) => {
-    if (link.type === "hash") {
-      return (
-        location.pathname === link.to.pathname && location.hash === link.to.hash
-      );
-    }
-    if (link.type === "hash-self") {
-      return location.hash === linkHash(link.to);
-    }
-    return false;
+    return (
+      (link.type === "hash" &&
+        location.pathname === link.to.pathname &&
+        location.hash === link.to.hash) ||
+      (link.type === "hash-self" &&
+        location.pathname === "/" &&
+        location.hash === linkHash(link.to))
+    );
   };
 
   const handleEmailClick = () => {
     window.location.href =
       "mailto:chimechinonyelum@gmail.com?subject=Let's%20Work%20Together";
+  };
+
+  const scrollWithOffset = (el) => {
+    setTimeout(() => {
+      const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+      const yOffset = -130; // adjust for navbar
+      window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
+    }, 100); // delay ensures home page has rendered
   };
 
   return (
@@ -71,7 +78,7 @@ function Dashboard({ onHamburgerClick }) {
           </span>
         </HashLink>
 
-        <ul className="flex py-5 items-center gap-14">
+        <ul className="flex py-5 items-center gap-10">
           {navLinks.map((link) => (
             <li key={link.name} className="p-2">
               {link.type === "route" ? (
@@ -100,6 +107,7 @@ function Dashboard({ onHamburgerClick }) {
                 <HashLink
                   smooth
                   to={link.to}
+                  scroll={scrollWithOffset}
                   className={`group text-base text-[#100108] dark:text-[#FFF] cursor-pointer ${
                     isHashActive(link) ? "font-medium" : ""
                   }`}
@@ -121,14 +129,17 @@ function Dashboard({ onHamburgerClick }) {
         </ul>
 
         <section className="flex items-center gap-5">
-          {/* <ThemeToggle /> */}
           <a
-            href="http://linkedin.com/in/chinonyelum-chime-a4b0a4166"
+            href="https://www.linkedin.com/in/ujunwa-chiahaoke-8159731ba"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-base py-[0.875rem] px-4 text-[#100108] dark:text-[#C78D32]"
+            className="group flex flex-row gap-[1px] text-base items-center py-[0.875rem] px-4 text-[#C78D32] hover:text-[#BB7608] active:text-[#D8B070] lg:text-base md:text-sm font-[400] leading-6 transition-colors duration-300"
           >
             LinkedIn
+            <MdArrowOutward
+              className="opacity-0 group-hover:opacity-100 h-5 w-5 text-[#BB7608] transition-opacity duration-300"
+              aria-hidden="true"
+            />
           </a>
           <Buttons className="font-bold" onClick={handleEmailClick}>
             Let’s talk

@@ -8,10 +8,11 @@ body {
   @apply font-montserrat;
 }
 
-.custom-pagination .swiper-pagination-bullet {
-  @apply w-2.5 h-2.5 rounded-full bg-gray-400/70 opacity-60 mx-1;
+.swiper-pagination-bullet {
+  background: #100108;
+  opacity: 1;
 }
 
-.custom-pagination .swiper-pagination-bullet-active {
+.swiper-pagination-bullet-active {
   @apply bg-[#100108] dark:bg-[#FCFCFC] opacity-100;
 }

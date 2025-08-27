@@ -1,11 +1,9 @@
 import React from "react";
 
 function Experience({ data }) {
-  // Helper function to render text with bold parts
   const renderBoldText = (input) => {
     if (input == null) return null;
 
-    // If we get an array, render each item separately (keeps original formatting)
     if (Array.isArray(input)) {
       return input.map((item, idx) => (
         <div key={idx} className="whitespace-pre-line">
@@ -13,13 +11,9 @@ function Experience({ data }) {
         </div>
       ));
     }
-
-    // If it's not a string (maybe already JSX), just return it
     if (typeof input !== "string") {
       return input;
     }
-
-    // Split by ** and wrap the odd parts in <strong>
     const parts = input.split("**");
     return parts.map((part, i) =>
       i % 2 === 1 ? (
@@ -27,7 +21,6 @@ function Experience({ data }) {
           {part}
         </strong>
       ) : (
-        // keep whitespace-pre-line on the container that wraps this result
         <span key={i}>{part}</span>
       )
     );
@@ -43,11 +36,11 @@ function Experience({ data }) {
           className="flex flex-col items-start self-stretch gap-4"
         >
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-center lg:justify-start w-full gap-2">
-            <picture className="">
+            <picture className="lg:h-[6.25rem] lg:w-[6.25rem]">
               <img
                 src={`${card.icon}`}
                 alt=""
-                className="lg:h-[6.25rem] lg:w-[6.25rem] h-16 w-16 "
+                className="lg:h-[6.25rem] lg:w-[6.25rem] h- w-16 "
               />
             </picture>
             <div className="flex flex-col justify-center items-start gap-1">
@@ -63,7 +56,7 @@ function Experience({ data }) {
             </div>
           </div>
           <span className="text-sm font-medium text-[#100108] dark:text-[#FFF] whitespace-pre-line">
-            {card.desc}
+            {renderBoldText(card.desc)}
           </span>
         </article>
       ))}

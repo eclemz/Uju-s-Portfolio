@@ -1,5 +1,25 @@
 import React from "react";
 import { Buttons2 } from "./Buttons";
+import { motion } from "framer-motion";
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 100 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeInOut" },
+  },
+};
+
+const pageTransition = {
+  initial: { opacity: 0, y: 100 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeInOut" },
+  },
+  exit: { opacity: 0, y: -50, transition: { duration: 0.4 } },
+};
 
 function ProjectCard({ data, onCardClick, isMainPage = false }) {
   function handleKeyDown(e, card) {
@@ -10,16 +30,25 @@ function ProjectCard({ data, onCardClick, isMainPage = false }) {
   }
 
   return (
-    <section
+    <motion.section
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={pageTransition}
       className={`flex flex-col ${isMainPage ? "lg:flex-col" : "lg:flex-row"} 
          justify-center lg:justify-between items-start lg:items-center 
          self-stretch gap-4 lg:gap-6 py-3 lg:py-10 px-5 lg:px-14`}
     >
       {data.map((card, index) => (
-        <article
+        <motion.article
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }}
+          variants={fadeInUp}
           key={index}
           className={`flex flex-col w-full  shadow-[inset_0_0_0_0.6px_rgba(150,150,150,0.6)]
- rounded-lg ${isMainPage ? "lg:flex-row p-5 gap-6" : ""} 
+             rounded-lg 
+              ${isMainPage ? "lg:flex-row p-5 gap-6" : ""} 
              flex-1 items-start self-stretch md:self-auto 
              lg:shrink-0 
              dark:bg-[#100108] bg-[#FFF] dark:border-[#FCFCFC]`}
@@ -78,9 +107,9 @@ function ProjectCard({ data, onCardClick, isMainPage = false }) {
               </Buttons2>
             </div>
           </div>
-        </article>
+        </motion.article>
       ))}
-    </section>
+    </motion.section>
   );
 }
 

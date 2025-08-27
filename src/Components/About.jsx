@@ -1,19 +1,38 @@
 import React from "react";
 import Marquee from "./Marquee";
+import { motion } from "framer-motion";
+
+const blurIn = {
+  hidden: { opacity: 0, filter: "blur(10px)" },
+  visible: {
+    opacity: 1,
+    filter: "blur(0px)",
+    transition: { duration: 1, ease: "linear" },
+  },
+};
 
 function About() {
   return (
     <>
       <section className="flex flex-col lg:flex-row items-start lg:items-center justify-center self-stretch gap-6 p-5 lg:py-20 lg:px-14">
-        <picture className="flex w-full flex-1">
+        <h2 className="lg:hidden block text-2xl lg:text-[2rem] font-bold text-[#FFFFFF] self-center ">
+          About Me
+        </h2>
+        <motion.picture
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.5 }}
+          variants={blurIn}
+          className="flex w-full flex-1"
+        >
           <img
             src="./uju.svg"
             alt="Ujunwa's Picture"
             className="h-[16.346rem] lg:h-[33.6875rem] w-full rounded-lg self-stretch object-cover object-center"
           />
-        </picture>
+        </motion.picture>
         <div className="flex lg:flex-1 flex-col items-start self-stretch justify-center gap-6">
-          <h2 className="text-2xl lg:text-[2rem] font-bold text-[#FFFFFF] self-stretch ">
+          <h2 className="hidden lg:block text-2xl lg:text-[2rem] font-bold text-[#FFFFFF] self-stretch ">
             About Me
           </h2>
           <p className="self-stretch text-sm lg:text-base lg:font-normal font-medium text-[#FFFFFF] whitespace-pre-wrap">

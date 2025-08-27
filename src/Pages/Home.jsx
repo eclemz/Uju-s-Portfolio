@@ -6,6 +6,8 @@ import ProjectCard from "../Components/ProjectCard";
 import { ExperienceCard } from "../Data/Data";
 import About from "../Components/About";
 import Experience from "../Components/Experience";
+import { motion } from "framer-motion";
+import ScrollToTopBtn from "../Components/ScrollToTopBtn";
 
 function Home() {
   const onCardClick = (card) => {
@@ -14,22 +16,23 @@ function Home() {
     }
   };
   return (
-    <>
+    <main className="">
       <Hero />
-      <section className="py-4">
-        <h1 className="text-4xl text-center text-[#FFF] font-bold mb-6">
+      <motion.section>
+        <h1 className="text-2xl lg:text-[2rem] text-center text-[#FFF] font-bold mb-6">
           Projects
         </h1>
         <ProjectCard data={ProjectCards} onCardClick={onCardClick} />
-      </section>
-      <section id="about" className="lg:scroll-mt-36 scroll-mt-20">
+      </motion.section>
+      <section id="about" className="lg:scroll-mt-36 scroll-mt-20 mt-7">
         <About />
       </section>
 
-      <section id="experience" className="lg:scroll-mt-36 scroll-mt-20">
+      <section id="experience" className="lg:scroll-mt-36 scroll-mt-20 mt-7">
         <Experience data={ExperienceCard} />
       </section>
-    </>
+      <ScrollToTopBtn />
+    </main>
   );
 }
 
