@@ -1,6 +1,7 @@
 import React from "react";
 import ProjectCard from "../Components/ProjectCard";
 import { ProjectCards } from "../Data/Data";
+import ScrollToTopBtn from "../Components/ScrollToTopBtn";
 
 function Project() {
   const onCardClick = (card) => {
@@ -18,6 +19,7 @@ function Project() {
         onCardClick={onCardClick}
         isMainPage={true}
       />
+      <ScrollToTopBtn />
     </main>
   );
 }

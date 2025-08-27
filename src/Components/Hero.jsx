@@ -4,7 +4,7 @@ import { Buttons } from "./Buttons";
 function Hero() {
   const handleEmailClick = () => {
     window.location.href =
-      "mailto:chimechinonyelum@gmail.com?subject=Let's%20Work%20Together";
+      "mailto:chiahaokelinda@gmail.com?subject=Let's%20Work%20Together";
   };
   return (
     <section className="hero flex flex-col items-start justify-end self-stretch gap-8 pt-36 lg:pt-44 pb-16 px-5 lg:px-14 mt-20 lg:mt-32">
