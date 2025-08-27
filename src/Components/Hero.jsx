@@ -7,9 +7,9 @@ function Hero() {
       "mailto:chimechinonyelum@gmail.com?subject=Let's%20Work%20Together";
   };
   return (
-    <section className="hero flex flex-col items-start justify-end self-stretch gap-8 pt-36 pb-16 px-5 lg:px-14 mt-20 lg:mt-32">
+    <section className="hero flex flex-col items-start justify-end self-stretch gap-8 pt-36 lg:pt-44 pb-16 px-5 lg:px-14 mt-20 lg:mt-32">
       <div className="flex flex-col items-start self-stretch lg:w-[45%] gap-4">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold self-stretch text-black dark:text-[#FFF] leading-normal">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold self-stretch text-[#FFF] leading-normal">
           A UI/UX Designer with Project Management Edge
         </h1>
         <p className="text-sm md:text-base lg:text-lg text-[#FFF]">

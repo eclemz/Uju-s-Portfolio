@@ -27,8 +27,8 @@ function Marquee() {
   ];
 
   return (
-    <div className="w-full flex flex-col lg:py-5 lg:px-14 md:py-5 md:px-8 py-6 px-4 gap-4 items-center text-white relative overflow-hidden">
-      <h2 className="text-center lg:text-[1.75rem] md:text-xl text-lg lg:font-normal font-bold self-stretch dark:text-[#FCFCFC] text-[#100108]">
+    <div className="w-full flex flex-col lg:py-5 lg:px-14 md:py-5 md:px-8 py-6 px-4 gap-4 items-center relative overflow-hidden">
+      <h2 className="text-center lg:text-[1.75rem] md:text-xl text-lg lg:font-normal font-bold self-stretch text-[#FCFCFC]">
         Tools I Use
       </h2>
 

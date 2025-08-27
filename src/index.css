@@ -6,13 +6,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   @apply font-montserrat;
+  background: #2b2b2b;
+  height: 100%;
+  margin: 0;
 }
 
 .swiper-pagination-bullet {
-  background: #100108;
-  opacity: 1;
+  background: #fcfcfc;
+  opacity: 100;
 }
 
 .swiper-pagination-bullet-active {
-  @apply bg-[#100108] dark:bg-[#FCFCFC] opacity-100;
+  @apply bg-[#FCFCFC] opacity-100;
 }

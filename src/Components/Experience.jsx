@@ -26,7 +26,7 @@ function Experience({ data }) {
     );
   };
   return (
-    <section className="flex flex-col items-center self-stretch p-5 lg:py-20 lg:px-14 gap-6 lg:gap-20 bg-[#FCFCFC] dark:bg-[#2B2B2B]">
+    <section className="flex flex-col items-center self-stretch p-5 lg:py-20 lg:px-14 gap-6 lg:gap-20 bg-[#2B2B2B]">
       <h2 className="text-center text-2xl lg:text-[2rem] font-bold self-stretch text-[#FFFFFF]">
         Experience
       </h2>
@@ -44,18 +44,18 @@ function Experience({ data }) {
               />
             </picture>
             <div className="flex flex-col justify-center items-start gap-1">
-              <h3 className="text-base lg:text-2xl self-stretch font-bold text-[#100108] dark:text-[#FFF]">
+              <h3 className="text-base lg:text-2xl self-stretch font-bold text-[#FFF]">
                 {card.title}
               </h3>
-              <p className="text-sm lg:text-base font-semibold text-[#0A0105] dark:text-[#FFF]">
+              <p className="text-sm lg:text-base font-semibold text-[#FFF]">
                 {card.company}
               </p>
-              <span className="text-sm lg:text-base text-[#100108] dark:text-[#FFF]">
+              <span className="text-sm lg:text-base text-[#FFF]">
                 {card.date}
               </span>
             </div>
           </div>
-          <span className="text-sm font-medium text-[#100108] dark:text-[#FFF] whitespace-pre-line">
+          <span className="text-sm font-medium text-[#FFF] whitespace-pre-line">
             {renderBoldText(card.desc)}
           </span>
         </article>
@@ -71,10 +71,10 @@ function Experience({ data }) {
               <img src="./uniR.svg" alt="" className="h-12 w-12" />
             </picture>
             <div className="flex flex-col justify-center self-end items-start gap-1">
-              <p className="text-sm lg:text-lg font-bold text-[#100108] dark:text-[#FFF]">
+              <p className="text-sm lg:text-lg font-bold text-[#FFF]">
                 Project Management (MSc)
               </p>
-              <p className="text-xs lg:text-sm font-medium self-stretch text-[#100108] dark:text-[#FFF]">
+              <p className="text-xs lg:text-sm font-medium self-stretch text-[#FFF]">
                 University of Roehampton, London
               </p>
             </div>
@@ -84,7 +84,7 @@ function Experience({ data }) {
               <img src="./unnlogo.png" alt="" className="h-12 w-10" />
             </picture>
             <div className="flex flex-col justify-center self-end items-start gap-1">
-              <p className="text-sm lg:text-lg font-bold text-[#100108] dark:text-[#FFF]">
+              <p className="text-sm lg:text-lg font-bold text-[#FFF]">
                 Bachelor of Arts (B.A), THEATRE ARTS
               </p>
               <p className="text-xs lg:text-sm font-medium self-stretch text-[#100108] dark:text-[#FFF]">

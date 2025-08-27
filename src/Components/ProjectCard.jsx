@@ -51,7 +51,7 @@ function ProjectCard({ data, onCardClick, isMainPage = false }) {
               ${isMainPage ? "lg:flex-row p-5 gap-6" : ""} 
              flex-1 items-start self-stretch md:self-auto 
              lg:shrink-0 
-             dark:bg-[#100108] bg-[#FFF] dark:border-[#FCFCFC]`}
+            bg-[#100108] border-[#FCFCFC]`}
         >
           <picture
             className={`flex items-start self-stretch 
@@ -82,7 +82,7 @@ function ProjectCard({ data, onCardClick, isMainPage = false }) {
                     {card.title}
                   </h3>
                 </div>
-                <p className="self-stretch lg:text-base text-sm lg:font-normal font-medium text-gray-600 dark:text-[#E7E6E6] whitespace-normal">
+                <p className="self-stretch lg:text-base text-sm lg:font-normal font-medium text-[#E7E6E6] whitespace-normal">
                   {card.description}
                 </p>
               </div>

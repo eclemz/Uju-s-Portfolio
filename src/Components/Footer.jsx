@@ -29,7 +29,7 @@ function Footer() {
 
   const handleEmailClick = () => {
     window.location.href =
-      "mailto:chimechinonyelum@gmail.com?subject=Let's%20Work%20Together";
+      "mailto:chiahaokelinda@gmail.com?subject=Let's%20Work%20Together";
   };
   const navLink = [
     { name: "About", path: "/about", width: "w-14" },
@@ -39,19 +39,19 @@ function Footer() {
   ];
 
   return (
-    <footer className="flex flex-col items-start self-stretch p-5 gap-4 dark:bg-[#2B2B2B] bg-[#FCFCFC] w-full dark:shadow-[0_-4px_6px_-1px_rgba(255,255,255,0.1)]">
-      <span className="lg:hidden block text-base leading-[1.05rem] font-bold text-[#100108] dark:text-[#FFF]">
+    <footer className="flex flex-col items-start self-stretch p-5 gap-4 bg-[#2B2B2B] w-full dark:shadow-[0_-4px_6px_-1px_rgba(255,255,255,0.1)]">
+      <span className="lg:hidden block text-base leading-[1.05rem] font-bold text-[#FCFCFC]">
         Ujunwa Chiahaoke
       </span>
 
       {/* Mobile Footer */}
       <nav
-        className="lg:hidden flex flex-col items-start self-stretch gap-4 text-[#100108] bg-gray-200 dark:bg-[#2B2B2B]"
+        className="lg:hidden flex flex-col items-start self-stretch gap-4  bg-[#2B2B2B]"
         aria-label="Main menu"
       >
         <Link to="/about" className="w-full">
           <div className="flex p-2 items-center gap-2 self-stretch">
-            <span className="text-[#100108] dark:text-[#FFFFFF] text-sm leading-[1.2rem]">
+            <span className="text-[#FCFCFC] text-sm leading-[1.2rem]">
               About Me
             </span>
           </div>
@@ -59,21 +59,21 @@ function Footer() {
 
         <Link to="/projects" className="w-full" tabIndex={0}>
           <div className="flex p-2 items-center  gap-2 self-stretch">
-            <span className="text-[#100108] dark:text-[#FCFCFC] text-sm leading-[1.rem]">
+            <span className="text-[#FCFCFC] text-sm leading-[1.rem]">
               Projects
             </span>
           </div>
         </Link>
         <Link to="/projects" className="w-full" tabIndex={0}>
           <div className="flex p-2 items-center  gap-2 self-stretch">
-            <span className="text-[#100108] dark:text-[#FCFCFC] text-sm leading-[1.rem]">
+            <span className="text-[#FCFCFC] text-sm leading-[1.rem]">
               Experience
             </span>
           </div>
         </Link>
         <Link to="/projects" className="w-full" tabIndex={0}>
           <div className="flex p-2 items-center  gap-2 self-stretch">
-            <span className="text-[#100108] dark:text-[#FCFCFC] text-sm leading-[1.rem]">
+            <span className="text-[#FCFCFC] text-sm leading-[1.rem]">
               Testimonial
             </span>
           </div>
@@ -96,7 +96,7 @@ function Footer() {
               aria-label="Open Ujunwa Chiahaoke LinkedIn profile in a new tab"
               tabIndex={0}
             >
-              <span className="text-[#100108] dark:text-[#C78D32] text-sm font-bold leading-[1.013rem]">
+              <span className="text-[#C78D32] text-sm font-bold leading-[1.013rem]">
                 LinkedIn
               </span>
             </a>
@@ -112,7 +112,7 @@ function Footer() {
           className="flex items-center gap-2"
           aria-label="Homepage"
         >
-          <span className="font-inter text-lg font-bold text-[#100108] dark:text-[#FFF]">
+          <span className="font-inter text-lg font-bold text-[#FFF]">
             Ujunwa Chiahaoke
           </span>
         </HashLink>
@@ -124,7 +124,7 @@ function Footer() {
                 <NavLink
                   to={link.to}
                   className={({ isActive }) =>
-                    `group text-base text-[#100108] dark:text-[#FFF] cursor-pointer ${
+                    `group text-base text-[#FFF] cursor-pointer ${
                       isActive ? "font-medium" : ""
                     }`
                   }
@@ -146,7 +146,7 @@ function Footer() {
                 <HashLink
                   smooth
                   to={link.to}
-                  className={`group text-base text-[#100108] dark:text-[#FFF] cursor-pointer ${
+                  className={`group text-base text-[#FFF] cursor-pointer ${
                     isHashActive(link) ? "font-medium" : ""
                   }`}
                 >
@@ -167,7 +167,6 @@ function Footer() {
         </ul>
 
         <section className="flex items-center gap-5">
-          {/* <ThemeToggle /> */}
           <a
             href="https://www.linkedin.com/in/ujunwa-chiahaoke-8159731ba"
             target="_blank"

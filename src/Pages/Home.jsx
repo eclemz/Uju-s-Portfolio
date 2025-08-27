@@ -1,6 +1,5 @@
 import React from "react";
 import Hero from "../Components/Hero";
-// import Marquee from "../Components/Marquee.jsx";
 import { ProjectCards } from "../Data/Data";
 import ProjectCard from "../Components/ProjectCard";
 import { ExperienceCard } from "../Data/Data";
@@ -16,10 +15,10 @@ function Home() {
     }
   };
   return (
-    <main className="">
+    <main className="bg-[#2B2B2B] min-h-screen">
       <Hero />
       <motion.section>
-        <h1 className="text-2xl lg:text-[2rem] text-center text-[#FFF] font-bold mb-6">
+        <h1 className="text-2xl lg:text-[2rem] text-center text-[#FFF] font-bold">
           Projects
         </h1>
         <ProjectCard data={ProjectCards} onCardClick={onCardClick} />

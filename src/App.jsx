@@ -1,4 +1,4 @@
-import Reaxt, { useState } from "react";
+import React, { useState } from "react";
 import Dashboard from "./Components/Dashboard";
 import Hamburger from "./Components/Hamburger";
 import Testimonial from "./Components/Testimonial";
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-      <div className="bg-[#FCFCFC]  dark:bg-[#2B2B2B] min-h-screen transition-colors duration-300">
+      <div className="bg-[#2B2B2B] min-h-screen">
         <Dashboard onHamburgerClick={() => setMenuOpen(true)} />
         <Hamburger open={menuOpen} onClose={() => setMenuOpen(false)} />
         <ScrollToTop />

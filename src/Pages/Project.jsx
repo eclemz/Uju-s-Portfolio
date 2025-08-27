@@ -9,7 +9,7 @@ function Project() {
     }
   };
   return (
-    <section className="project-page flex flex-col items-center self-stretch gap-6 py-5 lg:py-20 lg:mt-32 mt-20">
+    <main className="project-page bg-[#2B2B2B] min-h-screen flex flex-col items-center self-stretch gap-6 py-5 lg:py-20 lg:mt-32 mt-20">
       <h1 className="text-2xl font-bold self-stretch text-center text-[#FFF]">
         All Projects
       </h1>
@@ -18,7 +18,7 @@ function Project() {
         onCardClick={onCardClick}
         isMainPage={true}
       />
-    </section>
+    </main>
   );
 }
 

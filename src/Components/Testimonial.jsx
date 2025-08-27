@@ -18,8 +18,8 @@ function Testimonial({ data }) {
   };
 
   return (
-    <main className="flex w-full flex-col items-center self-stretch dark:bg-[#2B2B2B] bg-[#FCFCFC] gap-4 lg:gap-6 lg:pt-20 lg:pb-40 md:py-10 pt-5 pb-8 px-0">
-      <h2 className="text-2xl md:text-3xl font-bold text-[#100108] dark:text-[#FCFCFC] text-center self-stretch">
+    <main className="flex w-full flex-col items-center self-stretch bg-[#2B2B2B] gap-4 lg:gap-6 lg:pt-20 lg:pb-40 md:py-10 pt-5 pb-8 px-0">
+      <h2 className="text-2xl md:text-3xl font-bold text-[#FCFCFC] text-center self-stretch">
         Testimonial
       </h2>
 
@@ -36,7 +36,7 @@ function Testimonial({ data }) {
             disableOnInteraction: false,
           }}
           pagination={{ clickable: true }}
-          className="w-full flex flex-col items-start [&_.swiper-pagination]:mt-0 [&_.swiper-pagination]:relative rounded-lg gap-3 bg-[#FCFCFC] dark:bg-[#2B2B2B] py-2 px-5 border-[0.2px]"
+          className="w-full flex flex-col items-start [&_.swiper-pagination]:mt-0 [&_.swiper-pagination]:relative rounded-lg gap-3 bg-[#2B2B2B] py-2 px-5 border-[0.2px] border-white"
         >
           {data.map((card, idx) => (
             <SwiperSlide key={idx}>
@@ -47,14 +47,14 @@ function Testimonial({ data }) {
                 viewport={{ once: false }}
                 className="flex flex-col items-start self-stretch py-6 px-2"
               >
-                <p className="text-[#100108] dark:text-[#FFF] text-sm font-medium self-stretch">
+                <p className="text-[#FCFCFC] text-sm font-medium self-stretch">
                   {card.desc}
                 </p>
                 <div className="flex flex-col items-start self-stretch pt-3">
-                  <p className="text-center text-sm font-bold text-[#100108] dark:text-[#FCFCFC]">
+                  <p className="text-center text-sm font-bold text-[#FCFCFC]">
                     {card.name}
                   </p>
-                  <h3 className="whitespace-normal self-stretch font-medium text-[#0A0105] dark:text-[#9D979A] text-sm leading-normal">
+                  <h3 className="whitespace-normal self-stretch font-medium text-[#9D979A] text-sm leading-normal">
                     {card.title}
                   </h3>
                 </div>
@@ -75,14 +75,12 @@ function Testimonial({ data }) {
             key={idx}
             className="flex flex-col items-start gap-3 py-6 px-5 shadow-[inset_0_0_0_0.4px_rgba(150,150,150,0.6)] rounded-lg min-h-[250px]"
           >
-            <p className="text-[#100108] dark:text-[#FFF] text-base">
-              {card.desc}
-            </p>
+            <p className="text-[#FCFCFC] text-base">{card.desc}</p>
             <div className="flex flex-col items-start">
-              <p className="text-xs font-semibold self-stretch text-[#100108] dark:text-[#FCFCFC]">
+              <p className="text-xs font-semibold self-stretch text-[#FCFCFC]">
                 {card.name}
               </p>
-              <p className="whitespace-normal self-stretch font-medium text-[#0A0105] dark:text-[#9D979A] text-xs leading-normal">
+              <p className="whitespace-normal self-stretch font-medium text-[#9D979A] text-xs leading-normal">
                 {card.title}
               </p>
             </div>

@@ -26,7 +26,7 @@ function Dashboard({ onHamburgerClick }) {
 
   const handleEmailClick = () => {
     window.location.href =
-      "mailto:chimechinonyelum@gmail.com?subject=Let's%20Work%20Together";
+      "mailto:chiahaokelinda@gmail.com?subject=Let's%20Work%20Together";
   };
 
   const scrollWithOffset = (el) => {
@@ -38,7 +38,7 @@ function Dashboard({ onHamburgerClick }) {
   };
 
   return (
-    <section className="dark:bg-[#2B2B2B] bg-[#FCFCFC] shadow-sm dark:shadow-gray-500 w-full fixed top-0 left-0 z-40">
+    <section className="bg-[#2B2B2B] shadow-sm shadow-gray-500 w-full fixed top-0 left-0 z-40">
       {/* Mobile Header */}
       <nav className="lg:hidden flex flex-row p-5 justify-between items-center self-stretch">
         <HashLink
@@ -46,7 +46,7 @@ function Dashboard({ onHamburgerClick }) {
           to="/#"
           className="flex items-center gap-2 cursor-pointer"
         >
-          <span className="font-inter text-sm font-bold text-[#100108] dark:text-[#FFF]">
+          <span className="font-inter text-sm font-bold text-[#FFF]">
             Ujunwa Chiahaoke
           </span>
         </HashLink>
@@ -56,7 +56,7 @@ function Dashboard({ onHamburgerClick }) {
           aria-label="Open menu"
           className="p-3 focus:outline-none"
         >
-          <GiHamburgerMenu className="w-4 h-4 md:w-[2.25rem] md:h-[2.25rem] text-[#100108] dark:text-[#F8F1E6]" />
+          <GiHamburgerMenu className="w-4 h-4 md:w-[2.25rem] md:h-[2.25rem] text-[#F8F1E6]" />
         </button>
       </nav>
 
@@ -73,7 +73,7 @@ function Dashboard({ onHamburgerClick }) {
             alt="logo"
             className="w-[3.75rem] h-[3.75rem]"
           />
-          <span className="font-inter text-lg font-bold text-[#100108] dark:text-[#FFF]">
+          <span className="font-inter text-lg font-bold text-[#FFF]">
             Ujunwa Chiahaoke
           </span>
         </HashLink>
@@ -85,7 +85,7 @@ function Dashboard({ onHamburgerClick }) {
                 <NavLink
                   to={link.to}
                   className={({ isActive }) =>
-                    `group text-base text-[#100108] dark:text-[#FFF] cursor-pointer ${
+                    `group text-base text-[#FFF] cursor-pointer ${
                       isActive ? "font-medium" : ""
                     }`
                   }

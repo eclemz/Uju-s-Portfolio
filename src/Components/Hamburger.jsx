@@ -36,7 +36,7 @@ function Hamburger({ open, onClose }) {
 
   const handleEmailClick = () => {
     window.location.href =
-      "mailto:chimechinonyelum@gmail.com?subject=Let's%20Work%20Together";
+      "mailto:chiahaokelinda@gmail.com?subject=Let's%20Work%20Together";
   };
 
   const handleLinkClick = () => onClose();
@@ -73,13 +73,13 @@ function Hamburger({ open, onClose }) {
             animate="visible"
             exit="exit"
             variants={variants}
-            className="fixed top-0 right-0 w-full z-50 bg-gray-200 dark:bg-[#2B2B2B]"
+            className="fixed top-0 right-0 w-full z-50 bg-[#2B2B2B]"
             style={{ height: "50vh" }}
             role="dialog"
             aria-modal="true"
             aria-label="Mobile menu"
           >
-            <nav className="flex flex-col gap-5 p-5 md:p-8 bg-gray-200 dark:bg-[#2B2B2B]">
+            <nav className="flex flex-col gap-5 p-5 md:p-8 bg-[#2B2B2B]">
               {navLinks.map((link, i) => (
                 <div key={i} className="w-full">
                   {link.type === "route" ? (
@@ -89,7 +89,7 @@ function Hamburger({ open, onClose }) {
                       className="flex p-2 justify-center items-center"
                       ref={i === 0 ? firstLinkRef : undefined}
                     >
-                      <span className="text-[#100108] dark:text-[#FFFFFF] font-inter text-base">
+                      <span className="text-[#FFFFFF] font-inter text-base">
                         {link.name}
                       </span>
                     </NavLink>
@@ -101,7 +101,7 @@ function Hamburger({ open, onClose }) {
                       className="flex p-2 justify-center items-center"
                       ref={i === 0 ? firstLinkRef : undefined}
                     >
-                      <span className="text-[#100108] dark:text-[#FFFFFF] font-inter text-base">
+                      <span className="text-[#FFFFFF] font-inter text-base">
                         {link.name}
                       </span>
                     </HashLink>
@@ -111,11 +111,11 @@ function Hamburger({ open, onClose }) {
 
               <div className="flex justify-center">
                 <a
-                  href="https://www.linkedin.com/chinonyelum-chime-a4b0a4166/"
+                  href="https://www.linkedin.com/in/ujunwa-chiahaoke-8159731ba/"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={handleLinkClick}
-                  className="font-bold text-[#100108] dark:text-[#C78D32]"
+                  className="font-bold text-[#C78D32]"
                 >
                   LinkedIn
                 </a>
